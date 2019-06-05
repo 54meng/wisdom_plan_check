@@ -1017,6 +1017,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="js/jquery.form.js"></script>
 
 <script type="text/javascript" src="js/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/bootstable.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 $(function() {    

@@ -7,12 +7,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 boolean isNew = (Boolean)request.getAttribute("isNew");
 PurchaseNotice entity = (PurchaseNotice)request.getAttribute("purchaseNotice");
 %>
+
+<style>
+	.modal-radio div{
+	 padding:0px 10px ;
+	}
+	.modal-radio div span{
+		padding-left: 3px;
+	}
+	.modal-btn{
+	    display: inline-block;
+	    padding: 6px 12px;
+	    margin-bottom: 0;
+	    font-size: 14px;
+	    font-weight: 400;
+	    line-height: 1.42857143;
+	    text-align: center;
+	    white-space: nowrap;
+	    vertical-align: middle;
+	    -ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	    /* 定义选中鼠标光标 */
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    outline: none;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	    border-color:#ff0000 ;
+	}
+	/* 定义颜色 */
+	.modal-btn-outline{
+		background-color: transparent;
+		border-color: #26a69a;
+		color: #26a69a;
+		transition: all 0.5s;
+	}
+	.modal-btn-outline:active,.btn-outline:hover,.btn-outline:focus{
+		background-color: #26a69a;
+		border-color: #26a69a;
+		color: #FFFFFF;
+	}
+	
+</style>
 <!-- modal-content -->
 <div class="modal-header">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 	<h4 class="modal-title"><%=(isNew?"新建采购通知":"编辑采购通知") %></h4>
 </div>
-<div class="modal-content form">
+<div class="modal-content form ">
 	<!-- BEGIN FORM-->
 	<form action="purchaseNotice.sp" enctype="multipart/form-data" method="POST" id="form_sample_1" class="form-horizontal" novalidate="novalidate">
 		<input type="hidden" name="act" value="save" />
@@ -26,7 +71,7 @@ PurchaseNotice entity = (PurchaseNotice)request.getAttribute("purchaseNotice");
 				<button class="close" data-close="alert"></button>
 				你的表单验证成功!
 			</div>
-			<div class="form-group">
+			<!--<div class="form-group">
 				<label class="col-md-3 control-label">采购内容<span class="required">
 				* </span></label>
 				<div class="col-md-7">
@@ -40,7 +85,183 @@ PurchaseNotice entity = (PurchaseNotice)request.getAttribute("purchaseNotice");
 				<div class="col-md-7">
 					<input type="date" id="deadline" name="deadline" value="${purchaseNotice.deadlineStr}" data-required="1" class="form-control"/>
 				</div>
+			</div>-->
+			
+				<div class="form-group">
+					<div class="col-md-12 modal-radio" style="display: flex;">
+						<div class="" >
+							<input type="radio" name="tabSwitch" id="" value="1" checked><span>表一 </span> 
+						</div>
+						<div class="">
+							<input type="radio" name="tabSwitch" id="" value="2" ><span>表二</span> 
+						</div>     
+					</div>
+				</div>
+			<div class="table1" style="">
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped" id="table1">
+					<thead>
+					  <tr>
+						<td>产品编码</td>
+						<td>需求数量</td>
+						<td>计量单位</td>
+						<td>评估价格</td>
+						<td>需求日期</td>
+						<td>采购组</td>
+						<td>采购组织</td>
+						<td>波次编号</td>
+						<td>非标准产品说明原因</td>
+						<td>交货方式</td>
+						<td>ID号</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>123456</td>
+						<td>25</td>
+						<td>个</td>
+						<td>1000</td>
+						<td>2019-08-08 18:18:18</td>
+						<td>一组</td>
+						<td>采购部</td>
+						<td>188888</td>
+						<td>无</td>
+						<td>线下</td>
+						<td>888888</td>
+					  </tr>
+					  <tr>
+						<td>654321</td>
+						<td>25</td>
+						<td>个</td>
+						<td>1000</td>
+						<td>2019-08-08 18:18:18</td>
+						<td>一组</td>
+						<td>采购部</td>
+						<td>188888</td>
+						<td>无</td>
+						<td>线下</td>
+						<td>888888</td>
+					  </tr>
+					 
+					</tbody>
+				</table>
+				</div>
+			
+				<div class="form-group">
+					<div class="col-md-12" style="display: flex;justify-content: center;" >
+						<div class="modal-btn modal-btn-outline" id="addTable1"><i class="fa fa-plus"></i> 添加行</div>
+					</div>
+				</div>
+			
 			</div>
+			
+			
+			<div class="table2" style="display: none;">
+				
+				<div class="form-group">
+					<label class="control-label col-md-2" style="text-align: left;">采购单申请类型<span class="required">
+					* </span>
+					</label>
+					<div class="col-md-7">
+						<input type="text" id="" name="" value="" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-2" style="text-align: left;">单位/部门<span class="required">
+					* </span>
+					</label>
+					<div class="col-md-7">
+						<input type="text" id="" name="" value="" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-2" style="text-align: left;">采购组<span class="required">
+					* </span>
+					</label>
+					<div class="col-md-7">
+						<input type="text" id="" name="" value="" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-2" style="text-align: left;">波次编号<span class="required">
+					* </span>
+					</label>
+					<div class="col-md-7">
+						<input type="text" id="" name="" value="" class="form-control"/>
+					</div>
+				</div>
+				
+				<div class="table-responsive">
+				<table class="table table-bordered table-striped" id="table2">
+					<thead>
+					  <tr>
+						<td>序号</td>
+						<td>产品编码</td>
+						<td>产品信息</td>
+						<td>需求数量</td>
+						<td>单位</td>
+						<td>单价</td>
+						<td>交货日期</td>
+						<td>交货地点及交货方式</td>
+						<td>ID</td>
+						<td>非标准产品说明原因</td>
+						<td>申请人</td>
+						<td>特定因素A</td>
+						<td>资产编号</td>
+						<td>级别</td>
+						<td>特定因素B</td>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>088888</td>
+						<td>188888</td>
+						<td>隔离开关</td>
+						<td>100</td>
+						<td>个</td>
+						<td>100</td>
+						<td>2019-08-08</td>
+						<td>线下</td>
+						<td>888</td>
+						<td>无</td>
+						<td>张三</td>
+						<td>无</td>
+						<td>2888888</td>
+						<td>1</td>
+						<td>无</td>
+					  </tr>
+					  <tr>
+						<td>088888</td>
+						<td>188888</td>
+						<td>隔离开关</td>
+						<td>100</td>
+						<td>个</td>
+						<td>100</td>
+						<td>2019-08-08</td>
+						<td>线下</td>
+						<td>888</td>
+						<td>无</td>
+						<td>张三</td>
+						<td>无</td>
+						<td>2888888</td>
+						<td>1</td>
+						<td>无</td>
+					  </tr>
+					 
+					</tbody>
+				</table>
+				</div>
+			
+				<div class="form-group">
+					<div class="col-md-12" style="display: flex;justify-content: center;" >
+						<div class="modal-btn modal-btn-outline" id="addTable2"><i class="fa fa-plus"></i> 添加行</div>
+					</div>
+				</div>
+			
+			</div>
+				
+			
+			
 			
 			
 		</div>
@@ -56,7 +277,34 @@ PurchaseNotice entity = (PurchaseNotice)request.getAttribute("purchaseNotice");
 	<!-- END FORM-->
 </div>
 <!-- /.modal-content -->
+
 <script>
+	$('.modal-lg').css('width','1152');
+	// 表格
+	$('#table1').SetEditable({
+		$addTabButton: $('#addTable1')
+	});
+	$('#table2').SetEditable({
+		$addTabButton: $('#addTable2')
+	});
+	
+	$('input:radio[name="tabSwitch"]').change(function(){
+		var radioVal = $(this).val();
+        if (radioVal =="2"){
+        	console.log("2")
+        	$(".table1").hide(); 
+	        $(".table2").show();
+        }else{
+        	console.log("1")
+	        $(".table2").hide();
+	        $(".table1").show();
+        }
+
+		
+		
+	});
+
+	
 //Html编码获取Html转义实体
 function htmlEncode(value){
   return $('<div/>').text(value).html();
