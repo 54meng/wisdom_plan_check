@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="fbcisthread" default="jarfile">
+	<!--basedir 可设为任何目录名，设为.代表build.xml文件所有的目录-->
+	
+	<property name="lib.dir" value="lib"/>
+	<property name="jar.app.name" value="WebRoot\WEB-INF\lib\ordering.jar"/>
+	<target name="jarfile">
+	  <jar jarfile="${jar.app.name}" basedir="WebRoot\WEB-INF\classes"  update="true">
+	     <include name="**/*.*"/>   
+	  </jar>
+	</target>	
+	
+</project>

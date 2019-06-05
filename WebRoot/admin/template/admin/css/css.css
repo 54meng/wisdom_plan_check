@@ -1,0 +1,168 @@
+﻿.hidden {
+    display:none;
+}
+body{background:#fff}
+/*选择按钮默认样式*/
+.selectFiles {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+}
+.selectFiles {
+    position:relative;
+    background:#0089f0;
+    cursor:pointer;
+    color: #fff;
+    line-height: 32px;
+    padding: 0 20px 0 20px;
+    display:inline-block;
+    text-align:center;
+    font-size:14px;
+    -moz-border-radius:6px;
+    border-radius:6px;display:inline-block;vertical-align:middle
+}
+.selectFiles:hover {
+    background:#37a4f7
+}
+.selectFilesonDragEnter {
+    position:fixed;top:0;left:0;font-size:32px;-moz-border-radius:0;border-radius:0;z-index:99
+}
+
+.html5upload .btn0 {
+    border-color:#04be02;
+    background:#04be02;
+    color: #fff;
+}
+.html5upload .btn0:hover {
+    background:#35d333
+}
+.html5upload .btn1 {
+    border-color:#ccc;
+    background:#f7f7f7;
+    color: #666;
+}
+.html5upload .btn1:hover {
+    background:#fff
+}
+.html5uploadbtn {
+    box-sizing: padding-box;
+    line-height: 32px;
+    padding: 0 20px 0 20px;
+    display:inline-block;
+    text-align:center;
+    font-size:14px;
+    border-width:1px;
+    border-style:solid;
+    -moz-border-radius:6px;
+    border-radius:6px;display:inline-block;vertical-align:middle;
+    text-decoration:none;
+    margin:0 3px 0 3px
+}
+#html5FileList{font-size:13px;list-style:none;margin:10px auto 10px auto;padding:0;width:100%;border-collapse:collapse}
+#html5FileList li{margin:0;padding:0;position:relative;/*display:table-row*/;height:30px;line-height:30px;border-bottom:1px #ccc dashed}
+
+#html5FileList .file {
+    /*display:table-cell;*/
+    position:relative;
+    display:block;
+}
+#html5FileList .file span {
+    /*display:block;*/
+    width:90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position:absolute;
+    top:0;left:23px;
+    z-index:3
+}
+#html5FileList .file .md5progressText {
+    position:absolute;right:0;top:-8px;padding:0 10px 0 10px;text-align:center;z-index:3;white-space:nowrap;display:none;background:#04be02;color:#fff;line-height:16px;height:16px;-moz-border-radius:6px;border-radius:6px;
+}
+#html5FileList .file .md5progress {
+    position:absolute;height:3px;text-align:center;z-index:2;background:#04be02;display:none;
+}
+
+#html5FileList .filesize {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width:80px;
+    display:table-cell;
+    text-align:center;
+    font-size:12px;
+    color:#999;
+    position:absolute;
+    right:0;
+    top:0
+}
+.progress {
+    width:100%;box-sizing: content-box;margin:auto
+}
+.progress div {
+    margin:3px
+}
+.progress span {
+    display:block;font-size:12px;line-height:16px
+}
+progress {
+    height:8px;
+    border: 0px solid #0064B4;  
+    background-color:#f7f7f7;
+    color: #0064B4; /*IE10*/
+    box-sizing: content-box;
+    overflow:hidden
+}
+
+progress::-moz-progress-bar { background: #04be02; }
+progress::-webkit-progress-bar { background: #e6e6e6; }
+progress::-webkit-progress-value  { background: #04be02;}
+.state1{display:none}
+
+        /*checkbox特效*/
+.check-box input[type="checkbox"] {
+    visibility: hidden;
+}
+.check-box {
+    position:absolute;
+    z-index:5;
+    vertical-align:middle;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    margin: -3px 0 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.check-box i {
+    background: url('check_mark.png') no-repeat center center;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    -webkit-transform:rotateZ(-180deg);
+    -moz-transform:rotateZ(-180deg);
+    -o-transform:rotateZ(-180deg);
+    transform:rotateZ(-180deg);
+}
+.checkedBox {
+
+}
+.checkedBox i {
+    bottom: 0px;
+    -webkit-transform:rotateZ(0deg);
+    -moz-transform:rotateZ(0deg);
+    -o-transform:rotateZ(0deg);
+    transform:rotateZ(0deg);
+}

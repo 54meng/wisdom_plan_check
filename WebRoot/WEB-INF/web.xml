@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- web.xml自动会去读springHandler-servlet.xml,该spring的XML 是和你的servlet-name +“-servlet.xml” 匹配的 -->
+	<servlet>
+		<servlet-name>springHandler</servlet-name>
+		<servlet-class>
+			com.wpc.dfish.framework.InitableServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<listener>
+		<display-name>dfishSessionListener</display-name>
+		<listener-class>com.rongji.dfish.framework.listener.DfishSessionListener</listener-class>
+	</listener>
+	<servlet-mapping>
+		<servlet-name>springHandler</servlet-name>
+		<url-pattern>*.sp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>springHandler</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	<!--配置Spring过虑器防止汉字乱码 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			com.wpc.dfish.framework.filter.EncodingFiler
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<servlet-name>springHandler</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>
+			com.wpc.filter.LoginFilter
+		</filter-class>
+		<init-param>
+			<param-name>checkCode</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>exceptURI</param-name>
+			<param-value>login.sp,login.jsp,api.sp,serviceProtocol.jsp,upload.sp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>*.sp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>  
+        <welcome-file>index.htm</welcome-file>  
+        <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

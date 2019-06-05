@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="wisdom_plan_check"
+  id="myeclipse.1265079636453"
+  context-root="/wisdom_plan_check"
+  j2ee-spec="1.4"
+  archive="wisdom_plan_check.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

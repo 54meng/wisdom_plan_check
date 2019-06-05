@@ -1,0 +1,25 @@
+@charset "utf-8";
+body {margin: 0px;
+padding: 0px; 
+font-family:"微软雅黑";
+/*background: rgba(0, 0, 0, 0) url("../img/login_bg1.jpg") center top repeat-x;*/
+background: -webkit-linear-gradient(left top, #0fa18a, #568cb2); /* Safari 5.1 - 6.0 */
+background: -o-linear-gradient(bottom right, #0fa18a, #568cb2); /* Opera 11.1 - 12.0 */
+background: -moz-linear-gradient(bottom right, #0fa18a, #568cb2); /* Firefox 3.6 - 15 */
+background: linear-gradient(to top left, #0fa18a, #568cb2); /* 标准的语法 */
+
+
+}
+.login-box { width:400px; margin:0 auto;}
+.login-logo { text-align:center; padding:127px 0 0 0}
+.login-tit { text-align:center; color:#fff; font-size:31px; padding:20px 0}
+.login-input { margin-bottom:10px; height:50px; background:url(../img/login_input.png); color:#fff}
+.login-input .input  { font-size:16px; font-family:"微软雅黑"，Arial ; width:388px; border:0; background:none; height:48px; line-height:48px; padding-left:10px; color:#fff}
+.login-btn { height:51px;}
+/*.login-btn .input { font-size:20px; font-family:"微软雅黑"; color:#fff; width:400px; border:0; height:51px; line-height:50px; background:url(../img/login_btn1.png); cursor:pointer}*/
+.login-btn .input { font-size:20px; font-family:"微软雅黑"; color:#fff; width:400px; border:0; height:51px; line-height:50px; background-color:#4bb98d; cursor:pointer;border-radius: 25px;}
+
+
+
+input:-moz-placeholder { color: #fff; }
+::-webkit-input-placeholder { color:#fff; }

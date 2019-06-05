@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean name="/upload.sp" class="com.html5upload.upload" scope="request">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<!-- 首页 -->
+	<bean name="/index.sp"
+		class="com.wpc.webapp.controller.IndexController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<!-- 用户管理 -->
+	<bean name="/user.sp"
+		class="com.wpc.webapp.controller.UserController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<!-- 首页 -->
+	<bean name="/login.sp"
+		class="com.wpc.webapp.controller.LoginController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/excelImport.sp"
+		class="com.wpc.webapp.controller.ExcelImportController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/video.sp"
+		class="com.wpc.webapp.controller.VideoController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/cate.sp"
+		class="com.wpc.webapp.controller.CateController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/special.sp"
+		class="com.wpc.webapp.controller.SpecialController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/author.sp"
+		class="com.wpc.webapp.controller.AuthorController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/tag.sp"
+		class="com.wpc.webapp.controller.TagController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/advert.sp"
+		class="com.wpc.webapp.controller.AdvertController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/config.sp"
+		class="com.wpc.webapp.controller.ConfigController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/appVer.sp"
+		class="com.wpc.webapp.controller.AppVersionController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<bean name="/purchaseNotice.sp"
+		class="com.wpc.webapp.controller.PurchaseNoticeController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	<!-- API v1.0-->
+	
+	<!-- 账户API -->
+	<bean name="/api/1.0/*/*" class="com.wpc.webservice.v1.server.UserServiceController">
+		<property name="methodNameResolver" ref="paramResolver" />
+	</bean>
+	
+</beans>
